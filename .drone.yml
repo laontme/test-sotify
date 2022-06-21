@@ -1,0 +1,9 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: greeting
+  image: gradle:jdk17-alpine
+  commands:
+  - ./gradlew build
