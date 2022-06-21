@@ -7,3 +7,9 @@ steps:
   image: gradle:jdk17-alpine
   commands:
   - ./gradlew build
+- name: publish
+  image: plugins/github-release
+  settings:
+    api_key:
+      from_secret: publish
+    files: build/libs/sotify*.jar
